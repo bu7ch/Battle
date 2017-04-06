@@ -1,9 +1,12 @@
-describe Battle do
+# describe Battle do
 
-  feature 'Homepage' do
-    scenario 'say "Hello World"' do
+  feature 'Player details' do
+    scenario 'entring names' do
       visit('/')
-      expect(page).to have_content("Hello World")
+      fill_in :player_1_name, with: 'Emilie'
+      fill_in :player_2_name, with: 'Alice'
+      click_button('Submit')
+      expect(page).to have_content('Emilie vs. Alice')
     end
   end
-end
+# end
